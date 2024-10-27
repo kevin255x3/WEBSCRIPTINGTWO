@@ -118,11 +118,74 @@ const MODEL_GALLERY = [
       "The CP Company beanie is a stylish and functional accessory known for its casual, utilitarian design. Crafted from high-quality materials, such as wool or cotton blends, it features the brand’s signature goggle lens embedded in the fold, adding a distinctive touch. This beanie perfectly combines warmth with CP Company’s innovative, military-inspired aesthetic, making it a popular choice for both fashion enthusiasts and those seeking practical, cold-weather wear.",
   },
 ];
+const DESIGNER_GALLERY = [
+  {
+    id: 1,
+    designer: "Kiko Kostadinov",
+    description:
+      "Kiko Kostadinov is a London-based Bulgarian fashion designer known for his innovative and utilitarian approach to menswear, blending technical functionality with unconventional silhouettes. Since launching his eponymous brand in 2016, Kostadinov has gained acclaim for his detailed craftsmanship and progressive designs, often inspired by workwear, sportswear, and geometric shapes. His collaborations with brands like ASICS have highlighted his skill in blending high-performance materials with avant-garde aesthetics, resulting in sneakers that combine utility with an artistic edge. Kostadinov’s brand explores fashion as a medium for experimentation, and his collections are known for their intricate layering, muted color palettes, and structured forms that challenge traditional boundaries of menswear and womenswear.",
+    involvement: "ASICS, OTTO858, Kiko Kostadinov, AFFIX",
+  },
+  {
+    id: 2,
+    designer: "Yohji Yamamoto",
+    description:
+      "Yohji Yamamoto is a pioneering Japanese fashion designer celebrated for his avant-garde, deconstructed approach to fashion and his signature use of black. Since founding his label in the early 1980s, Yamamoto has crafted a distinctive aesthetic characterized by flowing, oversized silhouettes, asymmetry, and minimalist elegance that often subverts traditional fashion norms. Known for his philosophy that clothing should not simply adorn but create a sense of mystery around the wearer, Yamamoto’s designs blend elements of Japanese craftsmanship with Western tailoring. His work with luxurious, often textured fabrics emphasizes form over decoration, making each piece both wearable and artistic. Collaborations with brands like Adidas, through Y-3, have brought his innovative designs into the sportswear realm, marrying his high-fashion sensibilities with streetwear influences.",
+    involvement:
+      "Yohji Yamamoto, Y's, Y3 with adidas, Yohji Yamamoto Pour Homme, Yohji Yamamoto + Noir",
+  },
+  {
+    id: 3,
+    designer: "Rei Kawakubo",
+    description:
+      "Rei Kawakubo is a visionary Japanese fashion designer and the founder of Comme des Garçons, a brand celebrated for its radical approach to fashion and its defiance of conventional beauty standards. Since establishing Comme des Garçons in 1969, Kawakubo has consistently pushed the boundaries of design with her sculptural, often avant-garde pieces that challenge traditional ideas of shape, form, and gender in clothing. Known for her use of black, asymmetry, and experimental silhouettes, Kawakubo’s work often explores themes of deconstruction, imperfection, and abstract beauty, which have become hallmarks of her style.",
+    involvement:
+      "Founder of Dover Street Market, Comme des Garcons, Comme des Garcons Play, Comme des Garcons Shirt",
+  },
+];
+const BRAND_GALLERY = [
+  {
+    id: 1,
+    brand: "PAF, Post Archive Faction",
+    description: "",
+    founder: "",
+  },
+  {
+    id: 2,
+    brand: "Hyein Seo",
+    description: "",
+    founder: "",
+  },
+  {
+    id: 3, 
+    brand: "Basketcase Gallery",
+    description: "",
+    founder: "",
+  },
+];
+
+const RESOURCE_GALLERY = [
+  {
+    id: 1,
+    title: "Outlander Magazine",
+    description: "Outlander Magazine is a social media page with a niche in current trends in the fashion world. Outlander Magazine has trendy, current and easy to consume content for fashion enthusiasts.",
+    link: "https://outlandermag.com/",
+  }
+  {
+    id: 2,
+    title: "Bliss Foster",
+    description: "Bliss Foster is a YouTube creator known for his in-depth analysis and exploration of avant-garde fashion, particularly focusing on designers who push boundaries and challenge conventional aesthetics. With a unique approach to fashion criticism, Bliss dives deep into the conceptual and often philosophical aspects of collections from designers like Rei Kawakubo, Martin Margiela, and Rick Owens. His content is educational, often resembling a visual lecture, where he unpacks the historical, cultural, and artistic influences behind each designer’s work.",
+    link: "https://www.youtube.com/@BlissFoster",
+  },
+  
+]
 
 function App() {
   // Clothing/Model Section
   const [model, setModels] = useState(MODEL_GALLERY);
   const [garment, setGarments] = useState(CLOTHES_GALLERY);
+  const [designer, setDesigner] = useState(DESIGNER_GALLERY);
+  const [brand, setBrand] = useState(BRAND_GALLERY);
   const [favs, setFavs] = useState([]);
   const handleFavClick = (garmentID) => {
     if (favs.includes(garmentID)) {
@@ -167,7 +230,11 @@ function App() {
         <div></div>
       </div>
       <div>
-        <InformationSection />
+        {information.map((singleInformation) => {
+          return <InformationSection information={singleInformation
+            designer={singleDesigner}
+          } />;
+        })}
       </div>
     </div>
   );
