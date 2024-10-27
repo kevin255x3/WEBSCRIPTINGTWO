@@ -37,3 +37,24 @@ The first section of the website, is a card layout with a item title, item descr
 We learned how to useState in our demo, and that allowed for the creation of a favourite feature for each of the items in the first section of the page.
 
 The second section of the website, is a card layout with a 3d product model viewer. I integrated a JS plugin that can allow you to view GLB files (3d model format) on the web. I made a component called model viewer and this was perfect for another section that I could add onto the website that would tie in with the current them.
+
+I ran into my first CHALLENGE:
+My 3d model was too large to published to the git repository. After reading up on why I should make anything committed yet, I found out that git repositorys are kept below a certain size limit.
+
+The solution was to install homebrew, which was straight forward with the help of the documentation and CHATGPT.
+
+When I install homebrew I installed, git LFS which is git 'Large File Storage'.
+
+I then went into visual studio code where I had my project open and opened the terminal and ran the command:
+git lfs install
+
+Then i tracked down the file that would not commit because it was large in size and added it to the large file storage with the command:
+git lfs track "rickowenramones.glb"
+
+What this did is add my file into the LFS, located in the .gitattributes.
+
+When I wanted to commit this change to repository, I confirmed this change with the command:
+
+git add .gitattributes
+
+because that is where the file was now stored, which allowed me to succesfully commit my progress to the repository!
