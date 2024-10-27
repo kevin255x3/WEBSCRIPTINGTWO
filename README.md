@@ -36,4 +36,4 @@ With that being said, the theme of my website is archive fashion. One of my hobb
 The first section of the website, is a card layout with a item title, item description and item price that is pulled from an array at the top of the JSX page.
 We learned how to useState in our demo, and that allowed for the creation of a favourite feature for each of the items in the first section of the page.
 
-The second section of the website, is a card layout with a 3d product model viewer. I integrated a JS plugin that can allow you to view GLB files (3d model format) on the web. I made a component called model viewer and this was perfect for another section that I could add onto the website that would tie in with the current theme
+The second section of the website, is a card layout with a 3d product model viewer. I integrated a JS plugin that can allow you to view GLB files (3d model format) on the web. I made a component called model viewer and this was perfect for another section that I could add onto the website that would tie in with the current them.
