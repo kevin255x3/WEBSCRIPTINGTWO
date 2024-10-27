@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Wardrobe from "./Wardrobe.jsx";
 import Modelroom from "./Modelroom.jsx";
+import InformationSection from "./InformationSection.jsx";
 
 const CLOTHES_GALLERY = [
   {
@@ -164,6 +165,9 @@ function App() {
           })}
         </div>
         <div></div>
+      </div>
+      <div>
+        <InformationSection />
       </div>
     </div>
   );
