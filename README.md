@@ -19,7 +19,7 @@ There will be a link with a live server, usually looks like localhost:5173.
 
 Thank you!
 
-Overview.
+## Overview.
 
 This is our first assignment using react, and I compared it to template literals at first, but it's so much more complex.
 
@@ -38,7 +38,8 @@ We learned how to useState in our demo, and that allowed for the creation of a f
 
 The second section of the website, is a card layout with a 3d product model viewer. I integrated a JS plugin that can allow you to view GLB files (3d model format) on the web. I made a component called model viewer and this was perfect for another section that I could add onto the website that would tie in with the current them.
 
-I ran into my first CHALLENGE:
+## I ran into my first CHALLENGE:
+
 My 3d model was too large to published to the git repository. After reading up on why I should make anything committed yet, I found out that git repositorys are kept below a certain size limit.
 
 The solution was to install homebrew, which was straight forward with the help of the documentation and CHATGPT.
@@ -61,6 +62,8 @@ because that is where the file was now stored, which allowed me to succesfully c
 
 After my intial commit and LFS initialization I ran into no further technical issues.
 
+## Third section
+
 I made a third section for users to learn about designers, brands, and resources. I used tailwind to style the layout of the information section in the InformationSection.jsx component. How I made this work the way I expected it to was create an array for each of the different categories that I included in the formation section. This is the BRAND_GALLERY, DESIGNER_GALLERY, and RESOURCE_GALLERY.
 
 When the array were ready, I entered the information section component and passed the paramater desginer, brand, and resource into the function as properties so that I would be able to get the information needed from the array when the useState was available on the App.jsx component.
@@ -78,3 +81,12 @@ Each item in the arra can be tracked with the unique key, that is tracked by des
 The same practice was used on the resources, and brands sections.
 
 I used hover animations on the learn more links, and when clicked they pull the link from the array and redirect users to the resource.
+
+## CHALLENGE TWO
+
+I was importing fonts into my projects and after reading the documentation, I was able to find a solution to use my font as a tailwind class.
+
+Here hows I did that.
+
+I navigated to the tailwind.config.js
+and wrote included an extendsion for font families. When I included these I was able to style my text with the font-(Fontname)!
