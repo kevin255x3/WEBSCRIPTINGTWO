@@ -58,3 +58,23 @@ When I wanted to commit this change to repository, I confirmed this change with 
 git add .gitattributes
 
 because that is where the file was now stored, which allowed me to succesfully commit my progress to the repository!
+
+After my intial commit and LFS initialization I ran into no further technical issues.
+
+I made a third section for users to learn about designers, brands, and resources. I used tailwind to style the layout of the information section in the InformationSection.jsx component. How I made this work the way I expected it to was create an array for each of the different categories that I included in the formation section. This is the BRAND_GALLERY, DESIGNER_GALLERY, and RESOURCE_GALLERY.
+
+When the array were ready, I entered the information section component and passed the paramater desginer, brand, and resource into the function as properties so that I would be able to get the information needed from the array when the useState was available on the App.jsx component.
+
+For this, to be laid out in the ideal format i put into the tailwindcss classes, I had to put them in the order that I wanted them to show on the page.
+
+The first section was a designer map looping through each item in the designer array using the designer prop.
+
+designerInfo.designer is rendered as a title, designerInfo.description is render as a paragraph.
+
+designerInfo.involvement is rendered as additional details.
+
+Each item in the arra can be tracked with the unique key, that is tracked by designerInfo.id.
+
+The same practice was used on the resources, and brands sections.
+
+I used hover animations on the learn more links, and when clicked they pull the link from the array and redirect users to the resource.
