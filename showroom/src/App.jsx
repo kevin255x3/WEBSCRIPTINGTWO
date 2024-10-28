@@ -147,20 +147,23 @@ const BRAND_GALLERY = [
   {
     id: 1,
     brand: "PAF, Post Archive Faction",
-    description: "",
-    founder: "",
+    description:
+      "Post Archive Faction (PAF) is a South Korean fashion brand known for its experimental and forward-thinking approach to design, blending technical innovation with avant-garde aesthetics. Founded in 2018 by Dongjoon Lim and Sookyo Jeong, PAF explores the concept of “future heritage,” creating pieces that merge futuristic design elements with functionality and high-performance materials. The brand’s collections often feature deconstructed silhouettes, modular components, and architectural shapes that allow for unique forms of self-expression.",
+    founder: "Dongjoon Lim, Sookyo Jeong",
   },
   {
     id: 2,
     brand: "Hyein Seo",
-    description: "",
-    founder: "",
+    description:
+      "Hyein Seo is a South Korean fashion brand founded by designer Hyein Seo, known for its edgy, rebellious aesthetic that merges streetwear with high fashion. Since launching the brand in 2014, Seo has gained global recognition for her dark, dystopian-inspired designs that challenge traditional gender norms and embrace a youthful, anti-establishment attitude. Her collections often feature oversized silhouettes, bold graphics, and utilitarian details, such as straps, buckles, and tactical pockets, evoking themes of empowerment and self-expression.",
+    founder: "Hyein Seo",
   },
   {
-    id: 3, 
+    id: 3,
     brand: "Basketcase Gallery",
-    description: "",
-    founder: "",
+    description:
+      "Basketcase Gallery is a Los Angeles-based fashion brand and creative collective known for its playful, DIY-inspired approach to streetwear. Founded by artist Sean Pablo and creative director Nick Atkins, the brand merges skate culture with art and punk influences, creating pieces that feel both nostalgic and rebellious. Basketcase Gallery’s collections often feature hand-drawn graphics, bold typography, and references to underground subcultures, appealing to fans of alternative fashion who value authenticity and self-expression.",
+    founder: "Sean Pablo, Nick Atkins",
   },
 ];
 
@@ -168,17 +171,25 @@ const RESOURCE_GALLERY = [
   {
     id: 1,
     title: "Outlander Magazine",
-    description: "Outlander Magazine is a social media page with a niche in current trends in the fashion world. Outlander Magazine has trendy, current and easy to consume content for fashion enthusiasts.",
+    description:
+      "Outlander Magazine is a social media page with a niche in current trends in the fashion world. Outlander Magazine has trendy, current and easy to consume content for fashion enthusiasts.",
     link: "https://outlandermag.com/",
-  }
+  },
   {
     id: 2,
     title: "Bliss Foster",
-    description: "Bliss Foster is a YouTube creator known for his in-depth analysis and exploration of avant-garde fashion, particularly focusing on designers who push boundaries and challenge conventional aesthetics. With a unique approach to fashion criticism, Bliss dives deep into the conceptual and often philosophical aspects of collections from designers like Rei Kawakubo, Martin Margiela, and Rick Owens. His content is educational, often resembling a visual lecture, where he unpacks the historical, cultural, and artistic influences behind each designer’s work.",
+    description:
+      "Bliss Foster is a YouTube creator known for his in-depth analysis and exploration of avant-garde fashion, particularly focusing on designers who push boundaries and challenge conventional aesthetics. With a unique approach to fashion criticism, Bliss dives deep into the conceptual and often philosophical aspects of collections from designers like Rei Kawakubo, Martin Margiela, and Rick Owens. His content is educational, often resembling a visual lecture, where he unpacks the historical, cultural, and artistic influences behind each designer’s work.",
     link: "https://www.youtube.com/@BlissFoster",
   },
-  
-]
+  {
+    id: 3,
+    title: "Threaducation",
+    description:
+      "Threaducation is a YouTube channel dedicated to exploring the history, evolution, and cultural impact of fashion brands, designers, and trends. Known for its well-researched, documentary-style videos, Threaducation delves into the origins and influences behind some of the most iconic brands and designers in fashion, including names like Supreme, Ralph Lauren, and Off-White, as well as subcultures like streetwear, high fashion, and sneaker culture.",
+    link: "https://www.youtube.com/@Threaducation",
+  },
+];
 
 function App() {
   // Clothing/Model Section
@@ -186,6 +197,7 @@ function App() {
   const [garment, setGarments] = useState(CLOTHES_GALLERY);
   const [designer, setDesigner] = useState(DESIGNER_GALLERY);
   const [brand, setBrand] = useState(BRAND_GALLERY);
+  const [resource, setResource] = useState(RESOURCE_GALLERY);
   const [favs, setFavs] = useState([]);
   const handleFavClick = (garmentID) => {
     if (favs.includes(garmentID)) {
@@ -230,11 +242,13 @@ function App() {
         <div></div>
       </div>
       <div>
-        {information.map((singleInformation) => {
-          return <InformationSection information={singleInformation
-            designer={singleDesigner}
-          } />;
-        })}
+        <div>
+          <InformationSection
+            designer={designer}
+            brand={brand}
+            resource={resource}
+          />
+        </div>
       </div>
     </div>
   );
